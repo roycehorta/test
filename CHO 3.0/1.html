@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdbootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdbootstrap/css/cdb.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cdbootstrap/js/cdb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cdbootstrap/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/9d1d9a82d2.js" crossorigin="anonymous"></script>
+
+    <title>How to create bootstrap charts using bootstrap 5 and Contrast</title>
+
+    <style>
+        .chart-container {
+          width: 50%;
+          height: 50%;
+          margin: auto;
+        }
+      </style>
+  </head>
+
+  <body>
+    <div class="card chart-container">
+      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+      </div>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+  <script>
+    var xValues = ["Italy", "France", "Spain", "USA", "Argentina", "United Kingdom"];
+    var yValues = [55, 49, 44, 24, 15, 100];
+    var barColors = [
+      "#b91d47",
+      "#00aba9",
+      "#2b5797",
+      "#e8c3b9",
+      "#1e7145",
+      "#171717",
+    ];
+    
+    new Chart("myChart", {
+      type: "pie",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: "Last 6 Months | Medical Appointment per Services"
+        }
+      }
+    });
+    </script>
+    
+</html>
